@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="A site for posting tweets and photos" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/homeStyle.css" />
+    <link rel="stylesheet" href="../../css/Profile.css" />
+    <link rel="stylesheet" href="../../css/profileFriend.css" />
+    <link rel="stylesheet" href="../../css/all.min.css" />
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Social Media</title>
+  </head>
+  <body>
+    <div class="createPost p-2 rounded-circle d-flex justify-content-center align-items-center fs-4 position-fixed"><i class="fa-solid fa-plus"></i></div>
+    <div class="postCon position-fixed w-100 d-none">
+      <form action="" class="d-flex flex-column p-4 rounded position-relative mx-2">
+        <i class="fa-solid fa-xmark position-absolute fs-5"></i>
+        <img src="../../imgs/logo.png" alt="" />
+        <label for="img" class="chooseImg w-100 mb-1 text-center rounded py-1 px-3 pointer translate-middle-x fw-bold position-relative">Choose Post Photo </label>
+        <input type="file" name="img" id="img" accept="image/*" capture="camera" class="uploadImg d-none" />
+        <label for="name" class="main-color mt-4 mb-1 fs-5">Title: <span>(Not required)</span></label>
+        <input type="text" name="name" id="name" />
+        <label for="body" class="main-color mt-4 mb-1 position-relative fs-5">Body:</label>
+        <textarea name="body" id="body" class="mb-3 rounded border"></textarea>
+        <div class="sub rounded text-center pointer">Post</div>
+      </form>
+    </div>
+    <div class="commentsCon position-fixed w-100 d-none d-flex flex-column">
+      <h3 class="d-flex align-items-center justify-content-between main-color m-0 rounded-top px-3 py-4">Comments<i class="fa-solid fa-xmark fs-5"></i></h3>
+      <div class="showComments d-flex flex-column p-4 mx-2 gap-3 overflow-auto">
+        <div class="comm d-flex px-2 d-none">
+          <img src="../../imgs/person.png" alt="ERROR" class="rounded-circle pointer" />
+          <span class="d-flex flex-column ms-3 rounded text-start p-2 pointer">
+            <h6 class="mb-2 fw-bold">@abdullah</h6>
+            <div class="body m-0 ps-4 w-100 d-flex flex-wrap">this is body this is body this is body this is body this is body this is body this is body this is body</div>
+          </span>
+        </div>
+        <div class="noComm main-color fw-bold fs-3 position-absolute top-50 start-50 translate-middle">There is no comments</div>
+        <div class="problem main-color fw-bold fs-3 position-absolute top-50 start-50 translate-middle d-none">There is error please try again later</div>
+      </div>
+      <div class="commInp px-3 py-2 d-flex justify-content-between rounded-bottom"><input type="text" name="comm" id="comm" class="w-100 me-2 rounded border ps-3" /><span class="px-3 py-2 main-color rounded pointer">done</span></div>
+    </div>
+    <div class="sec1">
+      <div class="container">
+        <div class="landing d-none">
+          <div class="loader">
+            <span class="loader-text">loading</span>
+            <span class="load"></span>
+          </div>
+        </div>
+        <div class="header w-100 d-flex justify-content-between align-items-center pt-4 pb-3 pb-1 px-3 rounded-bottom">
+          <div class="l-side d-flex align-items-center">
+            <div class="logo"><img src="../../imgs/logo.png" alt="" /></div>
+            <ul class="d-flex gap-3 m-0">
+              <li class="pages home">Home</li>
+              <li class="pages priv on">Profile</li>
+            </ul>
+          </div>
+          <div class="r-side notUser d-flex gap-2">
+            <div class="btn login">Login</div>
+            <div class="btn reg">Register</div>
+          </div>
+          <div class="r-side userNow d-flex gap-2 align-items-center d-none">
+            <img class="userPhoto sameImg" src="../../imgs/person.png" alt="" />
+            <div class="firstName">Abdullah</div>
+            <div class="btn logout">Logout</div>
+          </div>
+        </div>
+        <div class="friendProfileContainer profileContainer d-flex flex-column justify-content-between align-items-center p-5 rounded mt-5 mb-3">
+          <img class="rounded-circle friendImg m-0 mb-3 main-color fs-3 src="../../imgs/person.png" alt="! NO IMAGE" />
+          <div class="info d-flex flex-column justify-content-between align-items-center">
+            <div class="main-color fs-2 d-flex gap-2 align-items-baseline fw-bold">
+              <h3 class="friendName mb-3 fs-1 main-color">Abdullah</h3>
+            </div>
+            <div class="main-color fs-2 d-flex gap-2 align-items-baseline fw-bold">
+              <h3 class="friendUserName main-color">@abdullah1029</h3>
+            </div>
+          </div>
+        </div>
+        <div class="friendPostCount rounded py-3 text-center mb-1 fw-bold fs-4">He Has <span>1</span> Posts</div>
+        <div class="allPosts d-flex flex-column-reverse gap-3">
+          <div class="post d-flex flex-column p-3 rounded d-none">
+            <div class="head d-flex gap-2 align-items-center border-bottom border-secondary mb-2 pb-2">
+              <img class="userPhoto" src="../../imgs/person.png" alt="No Image" />
+              <div class="userName main-color">@3melnas</div>
+            </div>
+            <img class="postPhoto rounded mb-1" src="../../imgs/logoold.png" alt="" />
+            <div class="time">2 min ago</div>
+            <div class="title fs-2 fw-bold main-color">im title two</div>
+            <div class="desc border-bottom border-secondary pb-2 main-color">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod vitae distinctio veniam nostrum. Porro laborum laboriosam sequi architecto vero, quidem voluptatum ap</div>
+            <div class="showComs d-flex align-items-center gap-1 mt-2 main-color pointer w-fit"><i class="fa-solid fa-comment"></i><span class="comments">(3)</span>Comments</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="errContainer position-fixed bottom-0 end-0 d-flex flex-column gap-2 mb-2 me-2"></div>
+    <script src="../../JS/Params.js"></script>
+    <script src="../../JS/API.js"></script>
+    <script src="../../JS/logic.js"></script>
+    <script src="../../JS/website/homeProfileAndFriend.js"></script>
+    <script src="../../JS/website/profileFriend.js"></script>
+  </body>
+</html>
