@@ -434,3 +434,9 @@ form i {
 .commInp span {
   background-color: var(--orange-color);
 }
+
+
+.post > div img {
+  aspect-ratio: 3/2;
+  object-fit: cover;
+}
