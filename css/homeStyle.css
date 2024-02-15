@@ -447,7 +447,7 @@ form i {
 }
 
 .toTop {
-  right: 20px;
+  right: -50px;
   bottom: 72px;
   color: var(--orange-color);
   font-size: 20px;

@@ -8,7 +8,7 @@ function addDnone(ele) {
 }
 
 function getPosts(limit) {
-  axios.get(baseUrl + `posts?limit=5&page=${limit}`).then((res) => {
+  axios.get(baseUrl + `posts?limit=4&page=${limit}`).then((res) => {
     for (i = 0; i < res.data.data.length; i++) {
       makePosts(res.data.data[i]);
     }

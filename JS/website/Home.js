@@ -55,7 +55,7 @@ createPost.onclick = () => {
   }
 };
 window.addEventListener("scroll", () => {
-  const endOfPage = window.scrollY + window.innerHeight >= document.body.offsetHeight;
+  const endOfPage = window.scrollY + window.innerHeight + 4 >= document.body.offsetHeight;
   if (endOfPage) {
     currentPage += 1;
     getPosts(currentPage);

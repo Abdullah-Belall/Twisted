@@ -80,3 +80,11 @@ toTop.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+
+window.onscroll = () => {
+  if (window.scrollY > 400) {
+    toTop.style.right = `20px`;
+  } else {
+    toTop.style.right = `-50px`;
+  }
+};
