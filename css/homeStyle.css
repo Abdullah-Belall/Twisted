@@ -95,6 +95,11 @@ body {
   font-size: 14px;
 }
 
+.noComm {
+  width: 300px;
+  text-align: center;
+}
+
 @media (max-width: 575px) {
   .header .r-side div {
     padding: 2px 4px !important;
@@ -245,10 +250,11 @@ body {
 }
 
 .createPost {
-  left: calc(100% - 70px);
-  top: calc(100% - 70px);
+  right: 20px;
+  bottom: 20px;
   width: 50px;
   height: 50px;
+  font-size: 20px;
   background-color: var(--main-bgc);
   color: var(--orange-color);
   cursor: pointer;
@@ -435,8 +441,47 @@ form i {
   background-color: var(--orange-color);
 }
 
-
 .post > div img {
   aspect-ratio: 3/2;
   object-fit: cover;
+}
+
+.toTop {
+  right: 20px;
+  bottom: 72px;
+  color: var(--orange-color);
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--main-bgc);
+  cursor: pointer;
+  opacity: 0.8;
+  transition: var(--main-tran);
+  z-index: 11;
+}
+.toTop:hover {
+  box-shadow: 0px 0px 16px -1px #000 !important;
+  opacity: 1 !important;
+}
+
+@media (max-width: 767px) {
+  .commentsCon .showComments {
+    width: 380px;
+  }
+
+  .commentsCon h3 {
+    background-color: var(--main-bgc);
+    width: 380px;
+  }
+
+  .commInp {
+    width: 380px;
+  }
+
+  .toTop,
+  .createPost {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 16px !important;
+  }
 }

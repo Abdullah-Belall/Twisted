@@ -15,7 +15,7 @@
     <title>Social Media</title>
   </head>
   <body>
-    <div class="createPost p-2 rounded-circle d-flex justify-content-center align-items-center fs-4 position-fixed"><i class="fa-solid fa-plus"></i></div>
+    <div class="createPost p-2 rounded-circle d-flex justify-content-center align-items-center position-fixed"><i class="fa-solid fa-plus"></i></div>
     <div class="postCon position-fixed w-100 d-none">
       <form action="" class="d-flex flex-column p-4 rounded position-relative mx-2">
         <i class="fa-solid fa-xmark position-absolute fs-5"></i>
@@ -48,8 +48,8 @@
       <form action="" class="d-flex flex-column p-4 rounded position-relative mx-2">
         <i class="fa-solid fa-xmark position-absolute fs-5"></i>
         <img src="../../imgs/logo.png" alt="" />
-        <label for="name" class="main-color mt-4 mb-1 fs-5">Title: <span>(Not required)</span></label>
-        <input type="text" name="name" id="name" />
+        <label for="name2" class="main-color mt-4 mb-1 fs-5">Title: <span>(Not required)</span></label>
+        <input type="text" name="name" id="name2" />
         <label for="body" class="main-color mt-4 mb-1 position-relative fs-5">Body:</label>
         <textarea name="body" id="body" class="mb-3 rounded border"></textarea>
         <div class="editSub rounded text-center pointer">Edit</div>
@@ -124,6 +124,7 @@
       </div>
     </div>
     <div class="errContainer position-fixed bottom-0 end-0 d-flex flex-column gap-2 mb-2 me-2"></div>
+    <i class="toTop fa-solid fa-arrow-up position-fixed rounded-circle d-flex justify-content-center align-items-center"></i>
     <script src="../../JS/Params.js"></script>
     <script src="../../JS/API.js"></script>
     <script src="../../JS/logic.js"></script>

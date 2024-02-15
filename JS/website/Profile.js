@@ -1,3 +1,6 @@
+let editClose = editCon.querySelector("i");
+let editTitle = editCon.querySelector("#name2");
+let editBody = editCon.querySelector("textarea");
 if (window.localStorage.getItem("token") === null) {
   window.location.href = `Login.html`;
 }

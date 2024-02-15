@@ -1,3 +1,6 @@
+let closePostCon = postCon.querySelector("i");
+let closeCommentsCon = commentsCon.querySelector("i");
+
 uploadImg.onchange = () => {
   if (uploadImg.value.split(`\\`).length === 1) {
     labelImg.innerHTML = `Choose Profile Image`;
@@ -62,3 +65,18 @@ commSend.onclick = () => {
     errs(`Can't post a comment with no litters`);
   }
 };
+
+let toTop = document.querySelector(".toTop");
+
+toTop.addEventListener("mouseover", () => {
+  toTop.classList.add("fa-bounce");
+});
+toTop.addEventListener("mouseout", () => {
+  toTop.classList.remove("fa-bounce");
+});
+toTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
